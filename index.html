@@ -3,58 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scythe Automa - Online Simulator</title>
   <link rel="stylesheet" type="text/css" href="bulma.css">
-  <style>
-    html .container, section {
-      background-color: beige !important;
-    }
-    section {
-      padding: 20px !important;
-    }
-    .spacer-20 {
-      height: 20px;
-    }
-    #phase, #stars {
-      font-size: 20px;
-      color: #444;
-    }
-    .acard {
-      height: 110px;
-    }
-    #acard-recruit.acard {
-      height: 70px;
-    }
-    .ccard {
-      height: 95px;
-    }
-    .acard .message-header {
-      height: 30px;
-    }
-    .acard .message-body {
-      height: 80px;
-    }
-    #acard-recruit.acard .message-body {
-      height: 40px;
-    }
-    .ccard .message-body {
-      height: 60px;
-      padding: 0;
-    }
-    .ccard table {
-      background-color: transparent;
-    }
-    .message.is-success .message-header {
-      background-color: #5a7946;
-    }
-    .message.is-danger .message-header {
-      background-color: #8c403a;
-    }
-    .message-body {
-      color: #444 !important;
-    }
-    .container {
-      max-width: 505px !important;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <section class="section">
@@ -74,6 +23,21 @@
         </p>
         <a class="button is-danger is-pulled-right" onClick="resetGame();">Reset</a>
         <a id="start" class="button is-success is-pulled-right" onClick="startGame();">Start</a>
+      </div>
+      <div class="spacer-10"></div>
+      <div class="container is-clearfix">
+        <div class="controls">
+          <a id="playcard" class="button is-default" disabled="disabled" onClick="normalCard();">Play Card</a>
+          <a id="playcombatcard" class="button is-default" disabled="disabled" onClick="combatCard();">Combat Card</a>
+          <a id="checklastcard" class="button is-default" disabled="disabled" onClick="checkLastCard();">Previous Card</a>
+        </div>
+        <div class="spacer-40"></div>
+        <div id="tracker" class="controls"></div>
+        <div class="spacer-40"></div>
+        <div class="controls">
+          <a id="combatstar" class="button is-default" disabled="disabled" onClick="addCombatStar();">+1 Combat Star</a>
+          <a id="powerstar" class="button is-default" disabled="disabled" onClick="addPowerStar();">+1 Power Star</a>
+        </div>
       </div>
       <div class="container is-clearfix">
         <p>
@@ -97,13 +61,13 @@
               <div id="normalCard-actions-gets"></div>
             </div>
           </article>
-          <article id="acard-recruit" class="acard message is-success">
-            <div class="message-header">Recruit Bonus</div>
+          <article id="acard" class="acard message is-success">
+            <div class="message-header">Enlist Bonus</div>
             <div class="message-body">
               <div id="normalCard-actions-enlist"></div>
             </div>
           </article>
-          <article class="ccard message is-warning">
+          <article id="ccard" class="ccard message is-warning">
             <div class="message-header">Combat Card</div>
             <div class="message-body">
               <div id="combat-card-actions"></div>
@@ -111,18 +75,13 @@
           </article>
         </div>
       </div>
-      <div class="spacer-20"></div>
-      <div class="container is-clearfix">
-        <div class="level">
-          <a id="playcard" class="button is-default is-pulled-left" disabled="disabled" onClick="normalCard();">Play Card</a>
-          <a id="playcombatcard" class="button is-default is-pulled-right" disabled="disabled" onClick="combatCard();">Play Combat Card</a>
-          <a id="combatstar" class="button is-default is-pulled-right" disabled="disabled" onClick="addCombatStar();">+1 Combat Star</a>
-        </div>
-      </div>
       <div class="container">
         <div class="level">
           <p>
-            <small><em><span id="deck-count">0</span>/<span id="card-count">0</span> cards left</em></small>
+            <small class="is-pulled-left"><em><span id="deck-count">0</span>/<span id="card-count">0</span> cards left</em></small>
+          </p>
+          <p>
+            <small class="is-pulled-right"><em>Card #<span id="card-id">0</span></em></small>
           </p>
         </div>
       </div>

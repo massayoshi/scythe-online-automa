@@ -40,7 +40,7 @@ var cards = [{
         faction: 'blue'
       },
       {
-        t: 'factory'
+        t: 'facobj'
       },
       {
         t: 'character'
@@ -76,7 +76,7 @@ var cards = [{
   actions: [{
     move: [{
       faction: 'white',
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'worker'
     }],
@@ -92,7 +92,7 @@ var cards = [{
   },{
     move: [{
       faction: 'white',
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'worker'
     }],
@@ -104,7 +104,7 @@ var cards = [{
       t: 'powercard',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: ['gold']
@@ -158,6 +158,9 @@ var cards = [{
       t: 'gold',
       q: 1
     },{
+      t: 'powercard',
+	    q: 1,
+    },{
       t: 'powercard'
     }],
     enlist: ['powercard']
@@ -186,9 +189,16 @@ var cards = [{
   },
   actions: [{
     move: [{
+      faction: 'green',
+      t: 'facobj'
+    },{
       t: 'worker'
     }],
     gets: [{
+      faction: 'purple',
+      t: 'charormech',
+      q: 1
+    },{
       t: 'worker',
       q: 1
     },{
@@ -239,7 +249,7 @@ var cards = [{
       t: 'power',
       q: 2
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: ['power']
@@ -257,6 +267,7 @@ var cards = [{
     move: [{
       faction: 'black',
       t: 'attack',
+      o: 'charormech',
       p: 5
     },{
       t: 'worker'
@@ -273,16 +284,17 @@ var cards = [{
     move: [{
       faction: 'black',
       t: 'attack',
+      o: 'charormech',
       p: 5
     },{
       t: 'mech'
     }],
     gets: [{
       faction: 'red',
-      t: 'character',
+      t: 'charormech',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     },{
       t: 'powercard',
@@ -301,21 +313,27 @@ var cards = [{
   },
   actions: [{
     move: [{
+      faction: 'purple',
+      t: 'facobj'
+    },{
       t: 'mech'
     },{
       t: 'worker'
     }],
     gets: [{
       faction: 'red',
-      t: 'character',
+      t: 'charormech',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: []
   },{
     move: [{
+      faction: 'purple',
+      type: 'facobj'
+    },{
       t: 'mech'
     }],
     gets: [{
@@ -326,7 +344,7 @@ var cards = [{
       t: 'gold',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: ['gold']
@@ -343,7 +361,7 @@ var cards = [{
   actions: [{
     move: [{
       faction: 'white',
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'mech'
     },{
@@ -353,14 +371,14 @@ var cards = [{
       t: 'worker',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: ['popularity']
   },{
     move: [{
       faction: 'white',
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'mech'
     }],
@@ -389,7 +407,7 @@ var cards = [{
       t: 'worker'
     }],
     gets: [{
-      t: 'character',
+      t: 'charormech',
       q: 1
     },{
       t: 'power',
@@ -404,7 +422,7 @@ var cards = [{
       t: 'gold',
       q: 2
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: []
@@ -422,7 +440,7 @@ var cards = [{
     move: [{
       t: 'mech'
     },{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -443,7 +461,7 @@ var cards = [{
       faction: 'blue',
       t: 'worker'
     },{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -491,7 +509,7 @@ var cards = [{
       t: 'gold',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: ['power']
@@ -509,9 +527,10 @@ var cards = [{
     move: [{
       faction: 'black',
       t: 'attack',
+      o: 'charormech',
       p: 4
     },{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -524,9 +543,10 @@ var cards = [{
     move: [{
       faction: 'black',
       t: 'attack',
+      o: 'charormech',
       p: 5
     },{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -550,7 +570,7 @@ var cards = [{
   },
   actions: [{
     move: [{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -565,9 +585,11 @@ var cards = [{
   },{
     move: [{
       t: 'attack',
+      o: 'charormech',
       p: 7
     },{
-      t: 'attack worker'
+      t: 'attack',
+      o: 'worker'
     },{
       t: 'mech'
     }],
@@ -588,7 +610,7 @@ var cards = [{
   },
   actions: [{
     move: [{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -603,11 +625,13 @@ var cards = [{
   },{
     move: [{
       t: 'attack',
+      o: 'charormech',
       p: 1
     },{
-      t: 'attack worker'
+      t: 'attack',
+      o: 'worker'
     },{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
@@ -632,21 +656,23 @@ var cards = [{
   },
   actions: [{
     move: [{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
     gets: [{
-      t: 'character',
+      t: 'charormech',
       q: 1
     }],
     enlist: []
   },{
     move: [{
       t: 'attack',
+      o: 'charormech',
       p: 5
     },{
-      t: 'attack worker'
+      t: 'attack',
+      o: 'worker'
     },{
       t: 'mech'
     }],
@@ -655,7 +681,7 @@ var cards = [{
       t: 'power',
       q: 1
     },{
-      t: 'character',
+      t: 'charormech',
       q: 1
     },{
       t: 'gold',
@@ -675,9 +701,11 @@ var cards = [{
   actions: [{
     move: [{
       t: 'attack',
+      o: 'charormech',
       p: 6
     },{
-      t: 'attack worker'
+      t: 'attack',
+      o: 'worker'
     },{
       t: 'worker'
     }],
@@ -689,6 +717,7 @@ var cards = [{
   },{
     move: [{
       t: 'attack',
+      o: 'charormech',
       p: 8
     },{
       t: 'worker'
@@ -717,11 +746,15 @@ var cards = [{
   },
   actions: [{
     move: [{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
     gets: [{
+      faction: 'green',
+      t: 'worker',
+      q: 1
+    },{
       t: 'worker',
       q: 1
     },{
@@ -731,11 +764,15 @@ var cards = [{
     enlist: []
   },{
     move: [{
-      t: 'factory'
+      t: 'facobj'
     },{
       t: 'character'
     }],
     gets: [{
+      faction: 'green',
+      t: 'charormech',
+      q: 1
+    },{
       t: 'worker',
       q: 1
     },{
@@ -755,7 +792,8 @@ var cards = [{
   },
   actions: [{
     move: [{
-      t: 'attack worker'
+      t: 'attack',
+      o: 'worker'
     },{
       t: 'worker'
     }],
@@ -766,7 +804,11 @@ var cards = [{
     enlist: []
   },{
     move: [{
-      t: 'attack worker'
+      faction: 'green',
+      t: 'facobj'
+    },{
+      t: 'attack',
+      o: 'worker'
     },{
       t: 'worker'
     }],
